@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dehcgsp2t15px"]
+
+[ext_resource type="Texture2D" uid="uid://kis05cpjjhnw" path="res://sprites/Goblin King Sprite Sheet.png" id="1_8lsmy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhy63"]
+atlas = ExtResource("1_8lsmy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6nqp"]
+atlas = ExtResource("1_8lsmy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0vf8"]
+atlas = ExtResource("1_8lsmy")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1otpf"]
+atlas = ExtResource("1_8lsmy")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8o8ga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhy63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6nqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0vf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1otpf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_65gqc"]
+radius = 16.0
+height = 40.0
+
+[node name="GoblinKing" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_8o8ga")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 12)
+shape = SubResource("CapsuleShape2D_65gqc")
