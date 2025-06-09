@@ -40,7 +40,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_65gqc"]
 radius = 16.0
-height = 40.0
+height = 38.0
 
 [node name="GoblinKing" type="CharacterBody2D"]
 
@@ -48,6 +48,7 @@ height = 40.0
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_8o8ga")
 animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
 position = Vector2(0, 12)
