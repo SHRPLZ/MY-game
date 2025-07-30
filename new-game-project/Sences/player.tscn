@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://15cn7bqtg1de"]
 
-[ext_resource type="Script" path="res://Sences/player.gd" id="1_a5ave"]
+[ext_resource type="Script" uid="uid://bt7brq6v4l0nn" path="res://Sences/player.gd" id="1_a5ave"]
 [ext_resource type="Texture2D" uid="uid://c4s4hk2obqw7a" path="res://sprites/knight.png" id="1_f1cor"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wq4u8"]
@@ -173,6 +173,7 @@ radius = 7.0
 height = 18.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 5
 position = Vector2(0, -12)
 script = ExtResource("1_a5ave")
 
@@ -186,4 +187,4 @@ position = Vector2(-1, 3)
 shape = SubResource("CapsuleShape2D_f8c2o")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 0.1
